@@ -47,21 +47,22 @@ This function should only modify configuration layer settings."
      ;; Add tool tips to show doc string of functions
      ;; Show snippets in the auto-completion popup
      ;; Show suggestions by most commonly used
-     (auto-completion :variables
-                      auto-completion-enable-help-tooltip t
-                      auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-sort-by-usage t
-                      ;; auto-completion-idle-delay 0.0
-                      ;; auto-completion-complete-with-key-sequence "fd"
-                      )
+     ;;(auto-completion :variables
+     ;;                 auto-completion-enable-help-tooltip t
+     ;;                auto-completion-enable-snippets-in-popup t
+     ;;                auto-completion-enable-sort-by-usage t
+     ;;                ;; auto-completion-idle-delay 0.0
+     ;;                ;; auto-completion-complete-with-key-sequence "fd"
+     ;;                )
 
      ;; To have auto-completion on as soon as you start typing
      ;; (auto-completion :variables auto-completion-idle-delay nil)
 
      ;; https://develop.spacemacs.org/layers/+lang/clojure/README.html
      (clojure :variables
-              ;; clojure-backend 'cider               ;; use cider and disable lsp
-              ;; clojure-enable-linters 'clj-kondo    ;; clj-kondo included in lsp
+              clojure-backend 'cider               ;; use cider and disable lsp
+              clojure-enable-clj-refactor t
+              clojure-enable-linters 'clj-kondo    ;; clj-kondo included in lsp
               clojure-enable-kaocha-runner t          ;; enable Kaocha test runner
               cider-repl-display-help-banner nil      ;; disable help banner
               cider-print-fn 'puget                   ;; pretty printing with sorted keys / set values
@@ -78,15 +79,15 @@ This function should only modify configuration layer settings."
      colors
 
      ;; SPC a L displays key and command history in a separate buffer
-     command-log
+     ;; command-log
 
      ;; Tools to work with comma separate values e.g. data science data
      ;; https://develop.spacemacs.org/layers/+lang/csv/README.html
      csv
 
      ;; Dockerfile LSP and docker container management
-     (docker :variables
-             docker-dockerfile-backend 'lsp)
+     ;; (docker :variables
+     ;;        docker-dockerfile-backend 'lsp)
 
      ;; For Spacemacs configuration files and packages
      emacs-lisp
@@ -117,12 +118,12 @@ This function should only modify configuration layer settings."
 
      ;; Language server protocol with minimal visual impact
      ;; https://practical.li/spacemacs/install-spacemacs/clojure-lsp/
-     (lsp :variables
-          lsp-ui-doc-enable nil       ;; disable all doc popups
-          lsp-ui-sideline-enable nil  ;; disable sideline bar for less distraction
-          treemacs-space-between-root-nodes nil  ;; no spacing in treemacs views
-          lsp-log-io t  ; Log client-server json communication
-          )
+     ;; (lsp :variables
+     ;;     lsp-ui-doc-enable nil       ;; disable all doc popups
+     ;;    lsp-ui-sideline-enable nil  ;; disable sideline bar for less distraction
+     ;;    treemacs-space-between-root-nodes nil  ;; no spacing in treemacs views
+     ;;    lsp-log-io t  ; Log client-server json communication
+     ;;    )
 
      (markdown :variables
                markdown-live-preview-engine 'vmd)
@@ -169,22 +170,22 @@ This function should only modify configuration layer settings."
                         persp-autokill-buffer-on-remove 'kill-weak)
 
      ;; Configuration: https://github.com/seagle0128/doom-modeline#customize
-     (spacemacs-modeline :variables
-                         doom-modeline-height 12
-                         doom-modeline-major-mode-color-icon t
-                         doom-modeline-buffer-file-name-style 'relative-to-project
-                         doom-modeline-display-default-persp-name t
-                         doom-modeline-minor-modes nil
-                         doom-modeline-modal-icon nil)
+     ;; (spacemacs-modeline :variables
+     ;;                   doom-modeline-height 12
+     ;;                   doom-modeline-major-mode-color-icon t
+     ;;                   doom-modeline-buffer-file-name-style 'relative-to-project
+     ;;                   doom-modeline-display-default-persp-name t
+     ;;                   doom-modeline-minor-modes nil
+     ;;                   doom-modeline-modal-icon nil)
 
      ;; Spell as you type with Flyspell package,
      ;; requires external command - ispell, hunspell, aspell
      ;; SPC S menu, SPC S s to check current word
-     spell-checking
+     ;; spell-checking
 
      ;; Use original flycheck fringe bitmaps
-     (syntax-checking :variables
-                      syntax-checking-use-original-bitmaps t)
+     ;; (syntax-checking :variables
+     ;;                 syntax-checking-use-original-bitmaps t)
 
      ;; Visual file manager - `SPC p t'
      ;; treemacs-no-png-images t removes file and directory icons
@@ -196,7 +197,7 @@ This function should only modify configuration layer settings."
      ;; Customise the Spacemacs themes
      ;; https://develop.spacemacs.org/layers/+themes/theming/README.html
      ;; Code in dotspacemacs/user-init to reduce size of modeline
-     theming
+     ;;theming
 
      ;; Support font ligatures (fancy symbols) in all modes
      ;; 'prog-mode for only programming languages
@@ -207,9 +208,9 @@ This function should only modify configuration layer settings."
 
      ;; Highlight changes in buffers
      ;; SPC g . transient state for navigating changes
-     (version-control :variables
-                      version-control-diff-tool 'diff-hl
-                      version-control-global-margin t)
+     ;; (version-control :variables
+     ;;                 version-control-diff-tool 'diff-hl
+     ;;                 version-control-global-margin t)
 
      (yaml :variables
            yaml-enable-lsp t)
